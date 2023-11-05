@@ -33,13 +33,13 @@ struct Driver: View {
                 .edgesIgnoringSafeArea(.bottom)
         }
         .onAppear {
-            // Set progressBarAnimation to true when the view appears to animate the progress bar
             withAnimation(Animation.linear(duration: 0.5)) {
                 currentPage = 2.0 / 3.0
             }
         }
     }
-    }
+
+        }
     }
     
     
