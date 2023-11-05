@@ -25,11 +25,10 @@ struct TrackYourRide: View {
                     .font(.system(size: 22, weight: .medium, design: .default))
                 
                 Spacer()
-            }
-            NavigationView {
+                
                 VStack {
                     NavigationLink(destination: Location(), isActive: $navigateToLocation) {
-                
+                    
                     }
 
                         .hidden()
