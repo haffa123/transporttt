@@ -1,88 +1,70 @@
-//
-//  ContentView.swift
-//  transporttt
-//
-//  Created by haffa dhifi on 4/11/2023.
-//
-
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+    @State private var currentPage: CGFloat = 1.0 / 3.0
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
+        NavigationView{
+            ZStack {
+                Color(.white)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    Image("taxi")
+                        .resizable()
+                        .clipShape(Circle())
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300, height: 250)
+                        .alignmentGuide(.top) { Dimensions in Dimensions[.top] }
+                    
+                    Spacer()
+                    NavigationLink(destination: Driver()) {
+                        Text("Request Ride")
+                            .font(.system(size: 32, weight: .medium, design: .default))
+                        .frame(width: 200, height: 100)}
+                    
+                    Text("Request a ride, get picked up by a nearby community driver")
+                        .font(.system(size: 22, weight: .medium, design: .default))
+                    
+                    Spacer()
                 }
-                .onDelete(perform: deleteItems)
+                
+                LinearProgressBar(progress: currentPage)
+                    .frame(height: 10)
+                    .edgesIgnoringSafeArea(.bottom)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+            .onAppear {
+                // Set progressBarAnimation to true when the view appears to animate the progress bar
+                withAnimation(Animation.linear(duration: 0.5)) {
+                    currentPage = 1.0 / 3.0
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
+struct LinearProgressBar: View {
+    var progress: CGFloat
+    
+    var body: some View {
+        GeometryReader { geometry in
+            HStack(spacing: 0) {
+                Rectangle()
+                    .foregroundColor(Color.blue)
+                    .frame(width: geometry.size.width * self.progress, height: geometry.size.height)
+                    .cornerRadius(10)
+                Rectangle()
+                    .foregroundColor(Color.gray.opacity(0.3))
+                    .frame(width: geometry.size.width * (1 - self.progress), height: geometry.size.height)
+                    .cornerRadius(10)
+                .frame(height: 700)            }
+        }
+        .frame(width: 200  , alignment: .leading)
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
     }
 }

@@ -16,6 +16,9 @@
 		12A82D332AF6688F007DF8CC /* transportttTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A82D322AF6688F007DF8CC /* transportttTests.swift */; };
 		12A82D3D2AF6688F007DF8CC /* transportttUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A82D3C2AF6688F007DF8CC /* transportttUITests.swift */; };
 		12A82D3F2AF6688F007DF8CC /* transportttUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A82D3E2AF6688F007DF8CC /* transportttUITestsLaunchTests.swift */; };
+		12B728F42AF6DCCF00E5A392 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B728F32AF6DCCF00E5A392 /* Driver.swift */; };
+		12B728F62AF6EED100E5A392 /* TrackYourRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B728F52AF6EED100E5A392 /* TrackYourRide.swift */; };
+		12B728F82AF71D4B00E5A392 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B728F72AF71D4B00E5A392 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		12A82D382AF6688F007DF8CC /* transportttUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = transportttUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A82D3C2AF6688F007DF8CC /* transportttUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transportttUITests.swift; sourceTree = "<group>"; };
 		12A82D3E2AF6688F007DF8CC /* transportttUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transportttUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		12B728F32AF6DCCF00E5A392 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		12B728F52AF6EED100E5A392 /* TrackYourRide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackYourRide.swift; sourceTree = "<group>"; };
+		12B728F72AF71D4B00E5A392 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 		12A82D1B2AF6688E007DF8CC /* transporttt */ = {
 			isa = PBXGroup;
 			children = (
+				12B728F72AF71D4B00E5A392 /* Location.swift */,
+				12B728F52AF6EED100E5A392 /* TrackYourRide.swift */,
+				12B728F32AF6DCCF00E5A392 /* Driver.swift */,
 				12A82D1C2AF6688E007DF8CC /* transportttApp.swift */,
 				12A82D1E2AF6688E007DF8CC /* ContentView.swift */,
 				12A82D202AF6688F007DF8CC /* Assets.xcassets */,
@@ -263,10 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12B728F42AF6DCCF00E5A392 /* Driver.swift in Sources */,
 				12A82D262AF6688F007DF8CC /* Persistence.swift in Sources */,
+				12B728F62AF6EED100E5A392 /* TrackYourRide.swift in Sources */,
 				12A82D292AF6688F007DF8CC /* transporttt.xcdatamodeld in Sources */,
 				12A82D1F2AF6688E007DF8CC /* ContentView.swift in Sources */,
 				12A82D1D2AF6688E007DF8CC /* transportttApp.swift in Sources */,
+				12B728F82AF71D4B00E5A392 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
