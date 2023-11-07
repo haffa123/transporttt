@@ -9,10 +9,14 @@ import SwiftUI
 
 struct Location: View {
     var body: some View {
-        EcoVenturaMapRes()
+        ZStack(alignment: .top) {
+            EcoVenturaMapRes()
+            LocationSearchActivatingView()
+                .padding(.top, 50)
+            MapViewActionButton()
+        }
     }
 }
-
 struct Location_Previews: PreviewProvider {
     static var previews: some View {
         TrackYourRide()

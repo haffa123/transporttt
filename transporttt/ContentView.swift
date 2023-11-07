@@ -39,7 +39,7 @@ struct ContentView: View {
                     currentPage = 1.0 / 3.0
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

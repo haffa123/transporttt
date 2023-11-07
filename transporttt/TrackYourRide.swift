@@ -50,7 +50,7 @@ struct TrackYourRide: View {
                 }
                 
                 
-            }
+            }.navigationBarBackButtonHidden(true)
             
             LinearProgressBar(progress: currentPage)
                 .frame(height: 10)

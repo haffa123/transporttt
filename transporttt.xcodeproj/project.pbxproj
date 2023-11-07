@@ -21,6 +21,8 @@
 		12B728F42AF6DCCF00E5A392 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B728F32AF6DCCF00E5A392 /* Driver.swift */; };
 		12B728F62AF6EED100E5A392 /* TrackYourRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B728F52AF6EED100E5A392 /* TrackYourRide.swift */; };
 		12B728F82AF71D4B00E5A392 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B728F72AF71D4B00E5A392 /* Location.swift */; };
+		12C1CF992AF9B8F3001F66DA /* LocationSearchActivatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1CF982AF9B8F3001F66DA /* LocationSearchActivatingView.swift */; };
+		12C1CF9B2AF9BDDA001F66DA /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1CF9A2AF9BDDA001F66DA /* MapViewActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		12B728F32AF6DCCF00E5A392 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		12B728F52AF6EED100E5A392 /* TrackYourRide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackYourRide.swift; sourceTree = "<group>"; };
 		12B728F72AF71D4B00E5A392 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		12C1CF982AF9B8F3001F66DA /* LocationSearchActivatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivatingView.swift; sourceTree = "<group>"; };
+		12C1CF9A2AF9BDDA001F66DA /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 		12B57E6C2AF820B3004320C6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				12C1CF952AF9B869001F66DA /* Home */,
 				12B57E6E2AF820D1004320C6 /* LocationSearch */,
 			);
 			path = Core;
@@ -176,7 +181,8 @@
 		12B57E6E2AF820D1004320C6 /* LocationSearch */ = {
 			isa = PBXGroup;
 			children = (
-				12B57E6F2AF820FF004320C6 /* ViewModel */,
+				12C1CF972AF9B8C0001F66DA /* Views */,
+				12C1CF962AF9B8AD001F66DA /* ViewModel */,
 			);
 			path = LocationSearch;
 			sourceTree = "<group>";
@@ -184,7 +190,6 @@
 		12B57E6F2AF820FF004320C6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				12B57E702AF8210C004320C6 /* Views */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -192,6 +197,31 @@
 		12B57E702AF8210C004320C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				12C1CF9A2AF9BDDA001F66DA /* MapViewActionButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		12C1CF952AF9B869001F66DA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				12B57E6F2AF820FF004320C6 /* ViewModel */,
+				12B57E702AF8210C004320C6 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		12C1CF962AF9B8AD001F66DA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		12C1CF972AF9B8C0001F66DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12C1CF982AF9B8F3001F66DA /* LocationSearchActivatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,6 +361,8 @@
 				12B728F62AF6EED100E5A392 /* TrackYourRide.swift in Sources */,
 				12A82D292AF6688F007DF8CC /* transporttt.xcdatamodeld in Sources */,
 				12A82D1F2AF6688E007DF8CC /* ContentView.swift in Sources */,
+				12C1CF992AF9B8F3001F66DA /* LocationSearchActivatingView.swift in Sources */,
+				12C1CF9B2AF9BDDA001F66DA /* MapViewActionButton.swift in Sources */,
 				12B57E682AF7F47C004320C6 /* EcoVenturaMapRes.swift in Sources */,
 				12A82D1D2AF6688E007DF8CC /* transportttApp.swift in Sources */,
 				12B728F82AF71D4B00E5A392 /* Location.swift in Sources */,
