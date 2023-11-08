@@ -14,10 +14,9 @@ struct ContentView: View {
                         .resizable()
                         .clipShape(Circle())
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 300, height: 250)
+                        .frame(width: 300, height: 300)
                         .alignmentGuide(.top) { Dimensions in Dimensions[.top] }
                     
-                    Spacer()
                     NavigationLink(destination: Driver()) {
                         Text("Request Ride")
                             .font(.system(size: 32, weight: .medium, design: .default))
@@ -26,7 +25,7 @@ struct ContentView: View {
                     Text("Request a ride, get picked up by a nearby community driver")
                         .font(.system(size: 22, weight: .medium, design: .default))
                     
-                    Spacer()
+                    
                 }
                 
                 LinearProgressBar(progress: currentPage)

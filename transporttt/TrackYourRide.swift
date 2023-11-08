@@ -9,14 +9,15 @@ struct TrackYourRide: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
+                Spacer()
                 Image("Driver")
                     .resizable()
                     .clipShape(Circle())
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 300, height: 250)
+                    .frame(width: 300, height: 300)
                     .alignmentGuide(.top) { Dimensions in Dimensions[.top] }
                 
-                Spacer()
+                
                 Text("Track your ride")
                     .font(.system(size: 30, weight: .medium, design: .default))
                     .frame(width: 200, height: 100)
@@ -24,7 +25,7 @@ struct TrackYourRide: View {
                 Text("Huge drivers network helps you find comfortable,safe and cheap rode ")
                     .font(.system(size: 22, weight: .medium, design: .default))
                 
-                Spacer()
+                
                 
                 VStack {
                     NavigationLink(destination: Location(), isActive: $navigateToLocation) {
@@ -32,7 +33,7 @@ struct TrackYourRide: View {
                     }
 
                         .hidden()
-                    Spacer()
+                   
                     Button(action: {
                         navigateToLocation = true
                         
@@ -45,7 +46,8 @@ struct TrackYourRide: View {
                             .background(Color.blue)
                             .cornerRadius(30)
                             .frame(width: 300, height: 150)
-                    }
+                    }.padding(.bottom, 60)
+                    
                     
                 }
                 

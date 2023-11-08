@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct Location: View {
+    @State private var showLocationSearchView = false
+    
     var body: some View {
         ZStack(alignment: .top) {
             EcoVenturaMapRes()
-            LocationSearchActivatingView()
-                .padding(.top, 50)
-            MapViewActionButton()
-        }
+                .ignoresSafeArea()
+            
+            if showLocationSearchView{
+                LocationSearchView(showLocationSearchView: $showLocationSearchView)
+            } else {
+                LocationSearchActivatingView()
+                    .padding(.top, 72)
+                    .onTapGesture {
+                        withAnimation(.spring()){
+                            showLocationSearchView.toggle()
+                        }
+                    }
+            }
+            MapViewActionButton(showLocationSearchView: $showLocationSearchView)
+                .padding(.leading)
+                .padding(.top, 4)
+        }.navigationBarBackButtonHidden(true)
     }
 }
 struct Location_Previews: PreviewProvider {

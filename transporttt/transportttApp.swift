@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct transportttApp: App {
+    @StateObject var locationViewModel = LocationSearchViewModel()
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(locationViewModel)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

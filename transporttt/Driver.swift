@@ -14,10 +14,10 @@ struct Driver: View {
                         .resizable()
                         .clipShape(Circle())
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 200, height: 200)
+                        .frame(width: 200, height: 300)
                         .alignmentGuide(.top) { Dimensions in Dimensions[.top] }
                     
-                    Spacer()
+                  
                     NavigationLink(destination: TrackYourRide()) {
                         Text("Confirm Your Driver")
                             .font(.system(size: 30, weight: .medium, design: .default))
@@ -26,7 +26,7 @@ struct Driver: View {
                     Text("Huge drivers network helps you find comfortable,safe and cheap rode ")
                         .font(.system(size: 22, weight: .medium, design: .default))
                     
-                    Spacer()
+                    
                 }
                 LinearProgressBar(progress: currentPage)
                     .frame(height: 10)
